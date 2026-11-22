@@ -17,11 +17,55 @@ class OpenCityGame {
         );
 
         this.camera.follow(this.car.getTarget());
+        this.isDriving = true;
+        this.player.player.setEnabled(false);
 
-        this.scene.onBeforeRenderObservable.add(() => {
-            this.car.update(this.input);
-            this.camera.update();
-        });
+this.input.exit = false;
+this.input.enter = false;
+
+this.exitCar = () => {
+    if (!this.isDriving) return;
+
+    this.isDriving = false;
+    this.player.player.setEnabled(true);
+
+    this.player.player.position.x =
+        this.car.car.position.x + 3;
+
+    this.player.player.position.z =
+        this.car.car.position.z;
+
+    this.camera.follow(this.player.getTarget());
+};
+
+this.enterCar = () => {
+    if (this.isDriving) return;
+
+    this.isDriving = true;
+    this.player.player.setEnabled(false);
+
+    this.camera.follow(this.car.getTarget());
+};
+
+        
+this.scene.onBeforeRenderObservable.add(() => {
+    if (this.isDriving) {
+        this.car.update(this.input);
+
+        if (this.input.exit) {
+            this.exitCar();
+        }
+    } else {
+        this.player.update(this.input);
+
+        if (this.input.enter) {
+            this.enterCar();
+        }
+    }
+
+    this.camera.update();
+});
+
 
         this.engine.start();
 
