@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #87ceeb;
+    font-family: Arial, sans-serif;
+    touch-action: none;
+}
+
+#gameCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    touch-action: none;
+}
+
+button {
+    -webkit-appearance: none;
+    appearance: none;
+    outline: none;
+    border: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
