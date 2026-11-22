@@ -12,7 +12,12 @@ class GameCar {
     }
 
     createCar() {
-        this.car = new BABYLON.TransformNode("car", this.scene);
+        this.car = BABYLON.MeshBuilder.CreateBox("carCollider", {
+    width: 2,
+    height: 1.8,
+    depth: 4
+}, this.scene);
+this.car.visibility = 0;
 
         const bodyMat = new BABYLON.StandardMaterial("carBodyMat", this.scene);
         bodyMat.diffuseColor = new BABYLON.Color3(0.8, 0.08, 0.06);
