@@ -2,6 +2,8 @@
 class GameInput {
 
     constructor() {
+        this.exit = false;
+this.enter = false;
 
         this.forward = false;
         this.backward = false;
@@ -47,15 +49,22 @@ class GameInput {
         controls.id = "mobileControls";
 
         controls.innerHTML = `
-            <div class="drive-controls">
-                <button data-control="left">◀</button>
-                <button data-control="right">▶</button>
-            </div>
+            
+<div class="drive-controls">
+    <button data-control="left">◀</button>
+    <button data-control="right">▶</button>
+</div>
 
-            <div class="pedal-controls">
-                <button data-control="backward">▼</button>
-                <button data-control="forward">▲</button>
-            </div>
+<div class="pedal-controls">
+    <button data-control="backward">▼</button>
+    <button data-control="forward">▲</button>
+</div>
+
+<div class="action-controls">
+    <button data-control="exit">Выйти</button>
+    <button data-control="enter">Сесть</button>
+</div>
+
         `;
 
         document.body.appendChild(controls);
