@@ -62,5 +62,27 @@ button {
     font-size: 28px;
     border: 2px solid white;
     touch-action: none;
+}.
+#mobileControls {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+#mobileControls button {
+    width: 65px;
+    height: 65px;
+    background: #202b3a;
+    color: white;
+    border: 2px solid white;
+    border-radius: 18px;
+    font-size: 28px;
+    pointer-events: auto;
 }
 
