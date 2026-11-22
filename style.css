@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -32,4 +33,34 @@ button {
     user-select: none;
     -webkit-tap-highlight-color: transparent;
 }
-https://github.com/panchyshynmatvey-hub/OpenCity/edit/main/style.css?utm_source=chatgpt.com
+
+#mobileControls {
+    position: fixed;
+    left: 20px;
+    right: 20px;
+    bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.drive-controls,
+.pedal-controls {
+    display: flex;
+    gap: 12px;
+    pointer-events: auto;
+}
+
+#mobileControls button {
+    width: 65px;
+    height: 65px;
+    border-radius: 18px;
+    background: rgba(20, 25, 35, 0.85);
+    color: white;
+    font-size: 28px;
+    border: 2px solid white;
+    touch-action: none;
+}
+
