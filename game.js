@@ -5,6 +5,7 @@ class OpenCityGame {
         this.scene = this.engine.scene;
 
         this.world = new GameWorld(this.scene);
+        this.pedestrians = new CityPedestrians(this.scene);
         this.input = new GameInput();
         this.physics = new GamePhysics(this.scene);
 
@@ -49,6 +50,7 @@ this.enterCar = () => {
 
         
 this.scene.onBeforeRenderObservable.add(() => {
+   this.pedestrians.update(); 
     if (this.isDriving) {
         this.car.update(this.input);
 
